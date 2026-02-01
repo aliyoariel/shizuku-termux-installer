@@ -10,7 +10,7 @@ Y='\033[1;33m' # Yellow
 NC='\033[0m'    # No Color
 
 # --- PATH CONFIGURATION ---
-AERIXY_DIR="$HOME/storage/documents/aerixy"
+AERIXY_DIR="$HOME/storage/shared/documents/aerixy"
 
 draw_header() {
     clear
