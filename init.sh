@@ -14,12 +14,29 @@ cd ~
 AERIXY_DIR="/sdcard/Documents/aerixy"
 
 draw_header() {
-    clear
+    clear                                                    
     printf "${G}=======================================================${NC}\n"
     printf "${G}│${NC}          ${LG}TERMUX SHIZUKU SYSTEM INTEGRATOR           ${G}│${NC}\n"
     printf "${G}│${NC}       ${LG}Build: 2026.1-STABLE | Dev: Aliyo Ariel       ${G}│${NC}\n"
     printf "${G}=======================================================${NC}\n"
 }
+
+printf "${LG}"
+printf "███████╗██╗  ██╗██╗███████╗██╗   ██╗██╗  ██╗██╗   ██╗    ████████╗███████╗██████╗ ███╗   ███╗██╗   ██╗██╗  ██╗    \n"
+printf "██╔════╝██║  ██║██║╚══███╔╝██║   ██║██║ ██╔╝██║   ██║    ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║   ██║╚██╗██╔╝    \n"
+printf "███████╗███████║██║  ███╔╝ ██║   ██║█████╔╝ ██║   ██║       ██║   █████╗  ██████╔╝██╔████╔██║██║   ██║ ╚███╔╝     \n"
+printf "╚════██║██╔══██║██║ ███╔╝  ██║   ██║██╔═██╗ ██║   ██║       ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║   ██║ ██╔██╗     \n"
+printf "███████║██║  ██║██║███████╗╚██████╔╝██║  ██╗╚██████╔╝       ██║   ███████╗██║  ██║██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗    \n"
+printf "╚══════╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝        ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝    \n"
+printf "                                                                                                                  \n"
+printf "██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ███████╗██████╗                                             \n"
+printf "██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██╔════╝██╔══██╗                                            \n"
+printf "██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     █████╗  ██████╔╝                                            \n"
+printf "██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗                                            \n"
+printf "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║                                            \n"
+printf "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝                                            \n"                                                                                                      
+printf "${NC}"
+sleep 2
 
 # --- PAGE 1: PREREQUISITES ---
 draw_header
@@ -99,10 +116,10 @@ printf "] 100%%${NC}\n"
 
 # --- PAGE 5: FINAL REPORT ---
 draw_header
-printf "${G}│${NC}   ${LG}SUCCESS: SHIZUKU INTEGRATED${NC}                       ${G}│${NC}\n"
-printf "${G}│${NC}   ${W}Environment: $PREFIX/bin${NC}                                 ${G}│${NC}\n"
-printf "${G}│${NC}   ${W}Command: ${Y}rish${NC}                                     ${G}│${NC}\n"
-printf "${G}│${NC}   ${W}Variable Patching: Optimized (DEX path absolute)${NC}  ${G}│${NC}\n"
+printf "${G}│${NC}   ${LG}SUCCESS: SHIZUKU INTEGRATED${NC}\n"
+printf "${G}│${NC}   ${W}Environment: $PREFIX/bin${NC}\n"
+printf "${G}│${NC}   ${W}Command: ${Y}rish${NC}\n"
+printf "${G}│${NC}   ${W}Variable Patching: Optimized (DEX path absolute)${NC}\n"
 printf "${G}=======================================================${NC}\n"
 
 rm -f "rish"* 2>/dev/null
