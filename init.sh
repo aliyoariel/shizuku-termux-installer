@@ -15,10 +15,10 @@ AERIXY_DIR="/sdcard/Documents/aerixy"
 
 draw_header() {
     clear
-    printf "${G}========================================================${NC}\n"
-    printf "${LG}  TERMUX SHIZUKU SYSTEM INTEGRATOR ${NC}\n"
-    printf "${W}  Build: 2026.1-STABLE | Dev: Aliyo Ariel ${NC}\n"
-    printf "${G}========================================================${NC}\n"
+    printf "${G}=======================================================${NC}\n"
+    printf "${G}│${NC}          ${LG}TERMUX SHIZUKU SYSTEM INTEGRATOR           ${G}│${NC}\n"
+    printf "${G}│${NC}       ${LG}Build: 2026.1-STABLE | Dev: Aliyo Ariel       ${G}│${NC}\n"
+    printf "${G}=======================================================${NC}\n"
 }
 
 # --- PAGE 1: PREREQUISITES ---
@@ -94,16 +94,16 @@ sed -i 's/RISH_APPLICATION_ID="PKG"/RISH_APPLICATION_ID="com.termux"/g' "$PREFIX
 
 # Progress Bar
 printf "${G}Finishing: ["
-for i in {1..25}; do printf "#"; sleep 0.2; done
+for i in {1..25}; do printf "■"; sleep 0.05; done
 printf "] 100%%${NC}\n"
 
 # --- PAGE 5: FINAL REPORT ---
 draw_header
-printf "${G}│${NC}   ${LG}SUCCESS: SHIZUKU INTEGRATED${NC}                      ${G}│${NC}\n"
-printf "${G}│${NC}   ${W}Environment: $PREFIX/bin${NC}            ${G}│${NC}\n"
-printf "${G}│${NC}   ${W}Command: ${Y}rish${NC}                                 ${G}│${NC}\n"
+printf "${G}│${NC}   ${LG}SUCCESS: SHIZUKU INTEGRATED${NC}                       ${G}│${NC}\n"
+printf "${G}│${NC}   ${W}Environment: $PREFIX/bin${NC}                                 ${G}│${NC}\n"
+printf "${G}│${NC}   ${W}Command: ${Y}rish${NC}                                     ${G}│${NC}\n"
 printf "${G}│${NC}   ${W}Variable Patching: Optimized (DEX path absolute)${NC}  ${G}│${NC}\n"
-printf "${G}========================================================${NC}\n"
+printf "${G}=======================================================${NC}\n"
 
 rm -f "rish"* 2>/dev/null
 
