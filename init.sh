@@ -27,7 +27,8 @@ printf "${W}1. Shizuku App must be installed on your device.\n"
 printf "2. Shizuku service must be ${G}RUNNING${W}.\n"
 printf "3. Run ${G}termux-setup-storage${W} for file access.\n"
 printf "4. Environment: ${B}Termux (Android)${NC}\n\n"
-read -p "[PRESS ENTER TO START INITIALIZATION]" 
+printf "\n${W}Press ENTER to start...${NC}\n"
+read -r < /dev/tty
 
 # --- PAGE 2: SOURCE SELECTION ---
 draw_header
@@ -36,7 +37,7 @@ printf "${G}--------------------------------------------------------${NC}\n"
 printf "${W}1) LOCAL   : Extract from Shizuku Internal App${NC}\n"
 printf "${W}2) CLOUD   : Download latest from GitHub Repo${NC}\n"
 printf "${G}--------------------------------------------------------${NC}\n"
-read -p "Selection [1/2]: " source_opt
+read -p "Selection [1/2]: " source_opt < /dev/tty
 
 # --- PAGE 3: LOGIC & TUTORIAL ---
 draw_header
@@ -50,7 +51,7 @@ if [ "$source_opt" == "1" ]; then
     
     mkdir -p "$AERIXY_DIR"
     printf "${Y}[*] Monitoring $AERIXY_DIR...${NC}\n"
-    read -p "[PRESS ENTER ONCE FILES ARE MOVED]"
+    read -p "[PRESS ENTER ONCE FILES ARE MOVED]" < /dev/tty
     
     if [[ ! -f "$AERIXY_DIR/rish" ]]; then
         printf "\n${R}[ERROR] Binary not found in Documents/aerixy/${NC}\n"

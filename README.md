@@ -10,4 +10,4 @@
 
 ## Quick Start
 ```bash
-curl -sL [https://raw.githubusercontent.com/aliyoariel/shizuku-termux/main/install.sh](https://raw.githubusercontent.com/aliyoariel/shizuku-termux/main/init.sh) | bash
+curl -sL https://github.com/aliyoariel/shizuku-termux-installer/raw/refs/heads/main/init.sh | bash
