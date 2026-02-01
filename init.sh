@@ -59,8 +59,8 @@ if [ "$source_opt" == "1" ]; then
     cp "$AERIXY_DIR/rish"* . && rm -f "$AERIXY_DIR/rish"* 2>/dev/null
 elif [ "$source_opt" == "2" ]; then
     printf "${B}[*] Fetching binaries from remote server...${NC}\n"
-    curl -L https://raw.githubusercontent.com/RikkaApps/Shizuku/master/scripts/rish -o rish
-    curl -L https://github.com/RikkaApps/Shizuku/raw/master/project/shizuku-api/src/main/resources/rish_shizuku.dex -o rish_shizuku.dex
+    curl -L https://github.com/aliyoariel/shizuku-termux-installer/raw/refs/heads/main/src/rish -o rish
+    curl -L https://github.com/aliyoariel/shizuku-termux-installer/raw/refs/heads/main/src/rish_shizuku.dex -o rish_shizuku.dex
     mkdir -p "$AERIXY_DIR"
     printf "${G}[OK] Download complete.${NC}\n"
     sleep 1
@@ -70,23 +70,25 @@ fi
 
 # --- PAGE 4: SYSTEM INJECTION ---
 draw_header
-printf "${LG}[⚡] INJECTING BINARIES TO SYSTEM...${NC}\n"
+printf "${LG}[⚡] INJECTING & PATCHING BINARIES...${NC}\n"
 
-# Deployment to $PREFIX/bin
+# Move files to system binary folder
 mv rish "$PREFIX/bin/rish"
-mv rish_shizuku.dex "$PREFIX/bin/rish_shizuku.dex"
+mv rish_shizuku.dex "$PREFIX/bin/rish.dex"
 chmod +x "$PREFIX/bin/rish"
 
-# Hard-patching rish script
-# Removing BASEDIR and pointing DEX to absolute path
+# Execution of Patches
+printf "${W}Removing BASEDIR variable... ${G}[DONE]${NC}\n"
 sed -i '/BASEDIR=/d' "$PREFIX/bin/rish"
-sed -i "s|DEX=.*|DEX=\"$PREFIX/bin/rish_shizuku.dex\"|g" "$PREFIX/bin/rish"
 
-printf "${W}Applying permissions... ${G}[DONE]${NC}\n"
-printf "${W}Patching DEX variables... ${G}[DONE]${NC}\n"
+printf "${W}Mapping absolute DEX path... ${G}[DONE]${NC}\n"
+sed -i "s|DEX=.*|DEX=\"$PREFIX/bin/rish.dex\"|g" "$PREFIX/bin/rish"
 
-# Termux Style Loading
-printf "${G}Progress: ["
+printf "${W}Setting App ID to com.termux... ${G}[DONE]${NC}\n"
+sed -i 's/RISH_APPLICATION_ID="PKG"/RISH_APPLICATION_ID="com.termux"/g' "$PREFIX/bin/rish"
+
+# Progress Bar
+printf "${G}Finishing: ["
 for i in {1..25}; do printf "#"; sleep 0.02; done
 printf "] 100%%${NC}\n"
 
@@ -99,3 +101,6 @@ printf "${G}│${NC}   ${W}Variable Patching: Optimized (DEX path absolute)${NC}
 printf "${G}========================================================${NC}\n"
 
 rm -f "rish"* 2>/dev/null
+
+# --- EXECUTE REMOTE CREDITS FROM GIST ---
+curl -sL "https://gist.github.com/aliyoariel/5362818da22ee077fe99e613e3ee2c48/raw/49b0335ed8e23336e3f599e9a4df570df761c012/credits.sh" | bash
